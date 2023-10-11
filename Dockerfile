@@ -21,4 +21,4 @@ RUN npm install \
 EXPOSE 3000
 
 # Start the app using serve command
-CMD [ "python", "matriceMultiplication.py", "build" ]
+CMD [ "python", "matriceMultiplication.py" ]
