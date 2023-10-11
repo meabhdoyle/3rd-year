@@ -1,5 +1,5 @@
 # Start your image with a node base image
-FROM node:18-alpine
+FROM python:3.10-slim
 
 # The /app directory should act as the main application directory
 WORKDIR /app
@@ -15,9 +15,10 @@ COPY ./public ./public
 RUN npm install \
     && npm install -g serve \
     && npm run build \
-    && rm -fr node_modules
+    && rm -fr node_modules \
+    && pip install --no-cache-dir -r requirements.txt
 
 EXPOSE 3000
 
 # Start the app using serve command
-CMD [ "serve", "-s", "build" ]
+CMD [ "python", "matriceMultiplication.py", "build" ]
