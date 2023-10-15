@@ -1,3 +1,5 @@
+#code adapted from 2 different articles from w3schools
+
 # Python program to multiply two matrices 
 import time
 import random
